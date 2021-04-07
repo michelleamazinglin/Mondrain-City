@@ -17,17 +17,17 @@ Vue.component("block", {
       return this.block.type == "road";
     },
     greenlight() {
-      return this.block.type == "light" && this.block.color == true;
+      return this.block.color === true && this.block.type == "light";
     },
     redlight() {
-      return this.block.type == "light" && this.block.color == false;
+      return this.block.color === false && this.block.type == "light";
     },
     
   },
   template: `
       <div v-if="apartment" class="blue" v-on:click="isHidden = !isHidden"> <p  v-if="!isHidden">{{this.block.name}}</p> </div>
       <div v-else-if="road" class="white" v-on:click="isHidden = !isHidden"> <p  v-if="!isHidden">{{this.block.name}}</p> </div>
-      <div v-else-if="greenlight" class="yellow" v-on:click="isHidden = !isHidden"> <p  v-if="!isHidden">{{this.block.color}}</p> </div>
+      <div v-else-if="greenlight" class="yellow" v-on:click="isHidden = !isHidden"> <p v-if="!isHidden">{{this.block.color}}</p> </div>
       <div v-else class="red" v-on:click="isHidden = !isHidden"> <p  v-if="!isHidden">{{this.block.color}}</p> </div>
   `,
   methods: {
@@ -60,12 +60,14 @@ let app = new Vue({
     apartment: "",
     road: "",
     light: true,
+    error: "",
   },
   
   
   methods:{
     addApt(){
-      blocksRef.add({
+      if (this.apartment != "") {
+        blocksRef.add({
         name: this.apartment,
         type: "apartment"
       })
@@ -74,10 +76,15 @@ let app = new Vue({
       });
       this.reset();
       this.updateData();
+      } else {
+        this.error = "please name the apartment you want to add";
+      }
+      
     },
     
     addRoad(){
-      blocksRef.add({
+      if (this.road != "") {
+        blocksRef.add({
         name: this.road,
         type: "road"
       })
@@ -86,6 +93,10 @@ let app = new Vue({
       });
       this.reset();
       this.updateData();
+      } else {
+        this.error = "please name the road you want to add";
+      }
+      
     },
     
     addLight(){
@@ -103,6 +114,7 @@ let app = new Vue({
     reset() {
       this.apartment = "";
       this.road = "";
+      this.error = "";
     },
     
     updateData(){

@@ -1,3 +1,11 @@
+h1 {
+  font-size: 40px;
+  color: white;
+  width: 272px;
+  background: linear-gradient(90deg, #000000 0%, #000000 25%, #FDD302 25%, #FDD302 50%, #3D4781 50%, #3D4781 75%, #D42726 75%, #D42726 100%);
+}
+
+
 /* mondrain section */
 .frame {
   border: 5px solid #000000;
