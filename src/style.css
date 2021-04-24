@@ -1,0 +1,126 @@
+h1 {
+  font-size: 40px;
+  color: white;
+  width: 272px;
+  background: linear-gradient(90deg, #000000 0%, #000000 25%, #FDD302 25%, #FDD302 50%, #3D4781 50%, #3D4781 75%, #D42726 75%, #D42726 100%);
+}
+
+
+/* mondrain section */
+.frame {
+  border: 5px solid #000000;
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-flow: wrap;
+  align-items: flex-start;
+  background-color: #000000;
+}
+
+/* blocks */
+.blue {
+  margin: 5px;
+  background-color: #3D4781;
+  height: 58px;
+  width: 20%;
+  flex: auto;
+  color: white;
+  text-align: center;
+}
+
+.blue:hover {
+  background-color: #1C3561;
+}
+
+.white {
+  margin: 5px;
+  background-color: #FEFEFE;
+  width: 10%;
+  height: 100px;
+  flex: auto;
+  text-align: center;
+}
+
+.white:hover {
+  background-color: #EFEEF3;
+}
+
+.yellow {
+  margin: 5px;
+  background-color: #FDD302;
+  width: 15%;
+  height: 50px;
+  flex: auto;
+  text-align: center;
+}
+
+.yellow:hover {
+  background-color: #EECA06;
+}
+
+.red {
+  margin: 5px;
+  background-color: #D42726;
+  width: 15%;
+  height: 50px;
+  flex: auto;
+  text-align: center;
+}
+
+.red:hover {
+  background-color: #BA0303;
+}
+
+/* input */
+
+.input-section{
+  display: flex;
+}
+
+.addApt{
+  display: flex;
+  margin: 5px;
+}
+
+.addApt > .button {
+  background-color: #3D4781;
+  color: white;
+}
+
+.addApt > .button:hover{
+  background-color: #1C3561;
+}
+
+.addRoad{
+  display: flex;
+  margin: 5px;
+}
+
+.addRoad > .button {
+  background-color: #FEFEFE;
+}
+
+.addRoad > .button:hover{
+  background-color: #EFEEF3;
+}
+
+.addLight{
+  display: flex;
+  margin: 5px;
+}
+
+.addLight > .button {
+  background-image: linear-gradient(red, yellow);
+}
+
+.addLight > .button:hover{
+  background-image: linear-gradient(yellow, red);
+}
+
+.button {
+  height: 35px;
+  width: 130px;
+  border-radius: 10px;
+  outline: none;
+}
+
